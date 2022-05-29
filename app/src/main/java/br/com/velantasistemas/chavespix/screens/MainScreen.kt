@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
@@ -60,6 +61,11 @@ fun RowScope.AddItem(
         icon = { Icon(imageVector = screen.icon, contentDescription = "Navigation Icon") },
         selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
         unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
-        onClick = { navHostController.navigate(screen.route) }
+        onClick = {
+            navHostController.navigate(screen.route) {
+                popUpTo(navHostController.graph.findStartDestination().id)
+                launchSingleTop = true
+            }
+        }
     )
 }
