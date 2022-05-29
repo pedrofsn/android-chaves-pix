@@ -13,7 +13,7 @@ import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import br.com.velantasistemas.chavespix.BottomNavGraph
+import br.com.velantasistemas.chavespix.graph.BottomNavGraph
 
 @Composable
 fun MainScreen() {
