@@ -3,7 +3,9 @@ package br.com.velantasistemas.chavespix.screens
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
+import androidx.compose.material.ContentAlpha
 import androidx.compose.material.Icon
+import androidx.compose.material.LocalContentColor
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -57,6 +59,7 @@ fun RowScope.AddItem(
         label = { Text(text = screen.title) },
         icon = { Icon(imageVector = screen.icon, contentDescription = "Navigation Icon") },
         selected = currentDestination?.hierarchy?.any { it.route == screen.route } == true,
+        unselectedContentColor = LocalContentColor.current.copy(alpha = ContentAlpha.disabled),
         onClick = { navHostController.navigate(screen.route) }
     )
 }
