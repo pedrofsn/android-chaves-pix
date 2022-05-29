@@ -1,4 +1,4 @@
-package br.com.velantasistemas.chavespix
+package br.com.velantasistemas.chavespix.screens
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Home
@@ -6,22 +6,22 @@ import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 
-sealed class BottomBarScreen(
-    private val route: String,
-    private val title: String,
-    private val icon: ImageVector
+sealed class BottomBarMenu(
+    val route: String,
+    val title: String,
+    val icon: ImageVector
 ) {
-    object Home: BottomBarScreen(
+    object Home: BottomBarMenu(
         route = "home",
         title = "Home",
         icon = Icons.Default.Home
     )
-    object Profile: BottomBarScreen(
+    object Profile: BottomBarMenu(
         route = "profile",
         title = "Profile",
         icon = Icons.Default.Person
     )
-    object Settings: BottomBarScreen(
+    object Settings: BottomBarMenu(
         route = "settings",
         title = "Settings",
         icon = Icons.Default.Settings
