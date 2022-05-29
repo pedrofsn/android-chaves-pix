@@ -11,7 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
-import br.com.velantasistemas.chavespix.ui.theme.ChavesPIXTheme
 
 @Composable
 fun FakeScreen(name: String, color: Color) {
@@ -33,7 +32,5 @@ fun FakeScreen(name: String, color: Color) {
 @Composable
 @Preview
 fun FakeScreenPreview() {
-    ChavesPIXTheme {
-        FakeScreen(name = "Home", color = Color.Blue)
-    }
+    FakeScreen(name = "Home2", color = Color.Cyan)
 }
